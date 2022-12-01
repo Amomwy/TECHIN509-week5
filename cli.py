@@ -1,7 +1,5 @@
 from typing import List
-from logic import empty_board
-from logic import other_player
-from logic import get_winner
+from logic import empty_board, other_player, get_winner
 
 
 def print_board(board):

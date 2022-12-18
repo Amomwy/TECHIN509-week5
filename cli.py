@@ -76,7 +76,7 @@ if __name__ == '__main__':
 
         print("---------------------------------------")
 
-    if winner is not None:
-        print("GAME OVER. " + winner + " WIN!")
-    else:
+    if winner == "DRAW":
         print("GAME OVER. DRAW.")
+    else:
+        print("GAME OVER. " + winner + " WINS.")

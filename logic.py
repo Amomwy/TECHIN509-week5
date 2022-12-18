@@ -6,10 +6,24 @@ def empty_board():
     ]
 
 
+def get_board_filled_num(board):
+    num = 0
+
+    for i in range(3):
+        for j in range(3):
+            if board[i][j] is not None:
+                num += 1
+
+    return num
+
+
 def get_winner(board):
-    """
-    The main game logic. Determine the winner (X, O or Draw) for a given board.
-    """
+    """Determines the winner of the given board.
+    Returns 'X', 'O', or None."""
+
+    # If a player wants to win Tic-Tac-Toe,
+    # these are all possible combinations
+    # for a player to win the game.
     wins = [
         [(0, 0), (0, 1), (0, 2)],
         [(1, 0), (1, 1), (1, 2)],
@@ -22,7 +36,11 @@ def get_winner(board):
     ]
 
     def check_win(S) -> bool:
-   
+        """
+        Check if a set of a player's pieces leads to win.
+        :param S: a set
+        :return: True if the set can lead to win otherwise False
+        """
         for win in wins:
             flag = True
             for pos in win:
@@ -47,7 +65,8 @@ def get_winner(board):
                 if check_win(o_set):
                     return "O"
 
-    return None
+    # Otherwise let the game continue
+    return None if get_board_filled_num(board) != 9 else "DRAW"
 
 
 def other_player(player):

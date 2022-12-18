@@ -3,6 +3,9 @@ from logic import empty_board, other_player, get_winner
 
 
 def print_board(board):
+    """
+    Print the board by rows and columns separating by blank space.
+    """
     for i in range(3):
         current_row = ""
         for j in range(3):
@@ -17,6 +20,9 @@ def print_board(board):
 
 
 def validate_input(board: List[List[str]], user_input_x: str, user_input_y: str) -> bool:
+    """
+    Validate the user's input coordinate of x and y.
+    """
     try:
         x_coordinate = int(user_input_x)
     except ValueError:

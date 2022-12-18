@@ -7,7 +7,9 @@ def empty_board():
 
 
 def get_winner(board):
-
+    """
+    The main game logic. Determine the winner (X, O or Draw) for a given board.
+    """
     wins = [
         [(0, 0), (0, 1), (0, 2)],
         [(1, 0), (1, 1), (1, 2)],
@@ -49,4 +51,7 @@ def get_winner(board):
 
 
 def other_player(player):
+    """
+    Return the other player for the given player.
+    """
     return "O" if player == "X" else "X"
